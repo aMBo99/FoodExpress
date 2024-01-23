@@ -1,44 +1,39 @@
-"use client"
-import { DishDash } from '@/app/components/dish-dash'
-import NavBar from './components/navbar'
-import { useState } from 'react';
-
-const Vdishes = [
+[
   {
     "id": 1,
     "title": "Moussaka",
     "description": "",
-    "thumbnailUrl": "/Moussaka.jpg"
+    "thumbnailUrl": ""
   },
   {
     "id": 2,
     "title": "Chicken Fricassee",
     "description": "",
-    "thumbnailUrl": "/ChickenFricassee.jpg"
+    "thumbnailUrl": ""
   },
   {
     "id": 3,
     "title": "Spaghetti Carbonara",
     "description": "",
-    "thumbnailUrl": "/spaghettiCarbon.jpg"
+    "thumbnailUrl": ""
   },
   {
     "id": 4,
     "title": "Tiramisu",
     "description": "",
-    "thumbnailUrl": "/Tiramisu.jpg"
+    "thumbnailUrl": ""
   },
   {
     "id": 5,
     "title": "Garage Cake",
-    "description": "The most famous desert that came from the city holding the nickname `Little Viena` - that is Ruse (Bulgaria). This cake consists primarily of chocolate and walnuts",
+    "description": "",
     "thumbnailUrl": ""
   },
   {
     "id": 6,
     "title": "Biscuit Cake",
-    "description": "Traditional cake made out of biscuits, caressing the tongue, mixes well together with berry jam, but the grated chocolate on top makes it come out as a perfect sweet",
-    "thumbnailUrl": "/bisquitcake.jpg"
+    "description": "",
+    "thumbnailUrl": ""
   },
   {
     "id": 7,
@@ -113,16 +108,3 @@ const Vdishes = [
     "thumbnailUrl": ""
   }
 ]
-
-
-export default function Home() {
-  
-  const [dishes, setDishes] = useState(Vdishes);
-  return (
-    <>
-      {/* <NavBar></NavBar> */}
-      <DishDash dishes={dishes} setDishes={setDishes} ></DishDash>
-      
-    </>
-  )
-}
