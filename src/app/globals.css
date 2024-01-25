@@ -9,6 +9,7 @@
   align-items: center;
   opacity: 0.85;
   color: antiquewhite;
+  overflow: hidden;
 }
 
 #nav1
@@ -19,9 +20,16 @@
 }
 
 .raztegnat {
-  display: flex;
+  /* display: flex; */
   height: 80vh;
-  background-color: rgba(239, 245, 248, 0.63);
-  align-items: center;
-  justify-content: center;
+  background-color: hsl(201, 100%, 6%, 0.85);
+  /* align-items: center; */
+  /* justify-content: center; */
+  overflow-y: scroll;
+}
+
+.food-card {
+  display: flex;
+  margin: 20px;
+  padding: 20px;
 }

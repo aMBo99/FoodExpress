@@ -1,7 +1,7 @@
 import Link from "next/link";
-import "./login.css";
+import "./register.css";
 
-export default function Login() {
+export default function Register() {
   return (
     <>
       <div>
@@ -29,14 +29,14 @@ export default function Login() {
               />
             </div>
             <button type="submit" className="login-button">
-              Sign In
+              Register
             </button>
           </form>
           <p
             style={{ color: "white", fontWeight: "lighter", marginTop: "20px" }}
           >
-            Don't have any account yet? Register{" "}
-            <Link href="/register" style={{ color: "lightskyblue" }}>
+            Already have an account? Login{" "}
+            <Link href="/login" style={{ color: "lightskyblue" }}>
               here
             </Link>
             .

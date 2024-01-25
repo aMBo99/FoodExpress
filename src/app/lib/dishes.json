@@ -1,110 +1,92 @@
 [
   {
-    "id": 1,
     "title": "Moussaka",
-    "description": "",
-    "thumbnailUrl": ""
+    "descript": "moussaka",
+    "imgUrl": "/Moussaka.jpg"
   },
   {
-    "id": 2,
     "title": "Chicken Fricassee",
-    "description": "",
-    "thumbnailUrl": ""
+    "descript": "chicken fricassee",
+    "imgUrl": "/ChickenFricassee.jpg"
   },
   {
-    "id": 3,
     "title": "Spaghetti Carbonara",
-    "description": "",
-    "thumbnailUrl": ""
+    "descript": "spaghetti carbonara",
+    "imgUrl": "/spaghettiCarbon.jpg"
   },
   {
-    "id": 4,
     "title": "Tiramisu",
-    "description": "",
-    "thumbnailUrl": ""
+    "descript": "The worlds most famous cake, which some like to mix with ",
+    "imgUrl": "/Tiramisu.jpg"
   },
   {
-    "id": 5,
     "title": "Garage Cake",
-    "description": "",
-    "thumbnailUrl": ""
+    "descript": "The most famous desert that came from the city holding the nickname `Little Viena` - that is Ruse (Bulgaria). This cake consists primarily of chocolate and walnuts.",
+    "imgUrl": "/GarageCake.jpg"
   },
   {
-    "id": 6,
     "title": "Biscuit Cake",
-    "description": "",
-    "thumbnailUrl": ""
+    "descript": "Traditional cake made out of biscuits, caressing the tongue, mixes well together with berry jam, but the grated chocolate on top makes it come out as a perfect sweet.",
+    "imgUrl": "/bisquitcake.jpg"
   },
   {
-    "id": 7,
     "title": "Chicken Fajita",
-    "description": "",
-    "thumbnailUrl": ""
+    "descript": "chicken fajita",
+    "imgUrl": "/chickenFajita.jpg"
   },
   {
-    "id": 8,
     "title": "Beans Monastery Style",
-    "description": "",
-    "thumbnailUrl": ""
+    "descript": "Traditional vegeterian soup made out of beans and other plants (monastery style), but to complete the recipe for success, pro tip: one could to throw in a sausage as well.",
+    "imgUrl": "/BeansSoup.jpg"
   },
   {
-    "id": 9,
     "title": "Wine Kebap",
-    "description": "",
-    "thumbnailUrl": ""
+    "descript": "A famous dish amongst people in Bulgaria, that's usually made with pork, but one does not have to comply with the original recipe. As the name suggests, it's cooked with wine to make the meat tender.",
+    "imgUrl": "/WineKebab.jpeg"
   },
   {
-    "id": 10,
     "title": "Caesar Salad",
-    "description": "",
-    "thumbnailUrl": ""
+    "descript": "The well known worldwide dish, made for kings & emperors - though the name says `Salad`, don't be fooled, as one can get filled up quite well with this one, as it contains chicken & bread slices.",
+    "imgUrl": "/CaeserSalad.jpg"
   },
   {
-    "id": 11,
     "title": "Tripe Soup",
-    "description": "",
-    "thumbnailUrl": ""
+    "descript": "Traditional bulgarian soup made out of beef tripe, usually topped with garlic vinegar sauce and some sprinkled chilly powder. Pro tip: does wonders against hangover.",
+    "imgUrl": "/TripeSoup.jpg"
   },
   {
-    "id": 12,
     "title": "Gazpacho",
-    "description": "",
-    "thumbnailUrl": ""
+    "descript": "gazpacho",
+    "imgUrl": "/Gazpacho.jpeg"
   },
   {
-    "id": 13,
     "title": "Souffle",
-    "description": "",
-    "thumbnailUrl": ""
+    "descript": "Very famous french muffins filled with chocolate creme, caressing the senses. Definitely a must-try.",
+    "imgUrl": "/Souffle.jpeg"
   },
   {
-    "id": 14,
     "title": "Spaghetti Bolognese",
-    "description": "",
-    "thumbnailUrl": ""
+    "descript": "Who doesn't know this famous italian pasta dish.",
+    "imgUrl": "/spaghettiBolognia.jpg"
   },
   {
-    "id": 15,
     "title": "Lasagna",
-    "description": "",
-    "thumbnailUrl": ""
+    "descript": "lasagne",
+    "imgUrl": "/Lasagne.jpeg"
   },
   {
-    "id": 16,
     "title": "Chicken Biryani",
-    "description": "",
-    "thumbnailUrl": ""
+    "descript": "Famous wholesome indian dish. Give it a try.",
+    "imgUrl": "/ChickenBiryani.jpeg"
   },
   {
-    "id": 17,
     "title": "Butter Chicken",
-    "description": "",
-    "thumbnailUrl": ""
+    "descript": "butter chicken",
+    "imgUrl": "/ButterChicken.jpg"
   },
   {
-    "id": 18,
     "title": "Paella",
-    "description": "",
-    "thumbnailUrl": ""
+    "descript": "seafood paella",
+    "imgUrl": "/Paella.jpg"
   }
 ]
