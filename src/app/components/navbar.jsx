@@ -1,8 +1,14 @@
 "use client"
 
-import "bootstrap/dist/js/bootstrap";
+// @ts-ignore
+// import "bootstrap/dist/js/bootstrap";
+import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { signOut } from '@/auth';
+// import { logOut } from "../lib/actions";
 
 export default function NavBar() {
   const pathName = usePathname();
@@ -35,6 +41,14 @@ export default function NavBar() {
             ) : (
               <></>
             )}
+            {/* <form
+              action={logOut}
+            >
+              <button className="flex h-[48px] grow items-center justify-center gap-2 rounded-md bg-gray-50 p-3 text-sm font-medium hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3">
+                {/* <PowerIcon className="w-6" /> */}
+                {/* <div className="hidden md:block">Sign Out</div> */}
+              {/* </button> */}
+            {/* </form> */} 
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">
                 <Link href="/dish-dash" className="nav-link">

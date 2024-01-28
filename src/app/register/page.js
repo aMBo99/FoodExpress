@@ -7,7 +7,7 @@ export default function Register() {
       <div>
         <div className="login-container">
           <h3 className="login-title">Welcome!</h3>
-          <form action="/" method="GET" id="form">
+          <form action="/"  id="form">
             <div className="input-group">
               <label for="email">Email</label>
               <input
