@@ -9,7 +9,7 @@ body {
 }
 
 .login-container {
-  background-color: hsl(201, 100%, 6%, 1);
+  background-color: hsl(201, 100%, 6%, 0.85);
   padding: 50px 30px;
   min-width: 400px;
   width: 50%;

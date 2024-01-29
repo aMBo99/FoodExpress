@@ -1,7 +1,7 @@
 export default function Contacts() {
   return (
     <div>
-      <h3 style={{color: "black"}}>Contacts</h3>
+      <h3 style={{color: "white"}}>Contacts</h3>
     </div>
   )
 }

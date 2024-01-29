@@ -1,7 +1,7 @@
 export default function About() {
   return (
     <div>
-      <h3 style={{color: "black"}}>About</h3>
+      <h3 style={{color: "white"}}>About</h3>
     </div>
   )
 }

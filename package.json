@@ -19,7 +19,6 @@
     "react-dom": "^18"
   },
   "devDependencies": {
-    "@types/bootstrap": "^5.2.10",
     "prisma": "^5.8.1"
   }
 }

@@ -1,18 +1,15 @@
 "use client"
 
-// @ts-ignore
-// import "bootstrap/dist/js/bootstrap";
-import 'bootstrap/dist/css/bootstrap.min.css';
-// import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import "bootstrap/dist/js/bootstrap";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { signOut } from '@/auth';
+// import { signOut } from '@/auth';
 // import { logOut } from "../lib/actions";
 
 export default function NavBar() {
   const pathName = usePathname();
-  console.log(pathName);
+  // console.log(pathName);
 
   return (
     <>

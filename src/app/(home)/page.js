@@ -1,19 +1,17 @@
-"use client"
+"use client";
 
-import { DishComp, DishDash } from '@/app/components/dish-dash'
-import NavBar from './components/navbar'
-import { useState, useEffect } from 'react';
-import { loadDishes } from './lib/dataqueries';
+import { DishComp, DishDash } from "@/app/(home)/components/dish-dash";
+import { useState, useEffect } from "react";
+import { loadDishes } from "./lib/dataqueries";
 
 export default function Home() {
-  
   const [dishes, setDishes] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
       try {
         const fetchedDishes = await loadDishes();
-        console.log(fetchedDishes);
+        // console.log(fetchedDishes);
         setDishes(fetchedDishes);
       } catch (error) {
         // Handle or log the error as needed
@@ -25,8 +23,8 @@ export default function Home() {
 
   return (
     <>
-      <DishComp dishes={dishes} setDishes={setDishes} ></DishComp>
+      <DishComp dishes={dishes} setDishes={setDishes}></DishComp>
     </>
-  )
+  );
 }
 // component to be moved under `dish-dash` aka 'Food Menu' later
