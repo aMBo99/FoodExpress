@@ -34,6 +34,18 @@
   padding: 20px;
 }
 
+.menu-item-actions {
+  display: flex;
+  flex-direction: column;
+  margin: 5px 10px 5px 0px;
+  justify-content: center;
+}
+
+.img-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
 .menu-row {
   display: flex;
   justify-content: space-between;
