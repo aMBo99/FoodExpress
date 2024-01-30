@@ -3,9 +3,12 @@
 import Link from "next/link";
 import "./register.css";
 import { useState } from "react";
+import { useRouter } from 'next/navigation';
 import { registerUser, fetchUser } from "../../(home)/lib/dataqueries";
 
 export default function Register() {
+  const router = useRouter();
+
   const [email, setEmail] = useState("");
   const [passwd, setPasswd] = useState("");
 
@@ -19,6 +22,7 @@ export default function Register() {
         user = await fetchUser(email, passwd);
         console.log("User registered: ", user);
         alert("Registering successful, logged in already!");
+        router.push('/');
       } else {
         alert("User already exists!");
       }

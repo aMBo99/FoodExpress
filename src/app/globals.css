@@ -37,7 +37,7 @@
 .menu-row {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 15px;
+  margin: 20px;
 }
 
 .menu-grid {
@@ -45,6 +45,12 @@
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 10px;
+}
+
+.menu-item-actions {
+  display: flex;
+  flex-direction: column;
+  margin: 20;
 }
 
 .menu-item {

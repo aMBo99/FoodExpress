@@ -9,7 +9,7 @@ export function DishComp({ dishes, setDishes }) {
       <div className="menu-row">
         <h2 style={{ color: "orange" }}>Our Food Menu</h2>
         <Link href="/dish-dash/create">
-          <button className="btn btn-success">Add +</button>
+          <button className="btn btn-success">+</button>
         </Link>
       </div>
       <div className="menu-grid">
@@ -28,6 +28,10 @@ export function DishComp({ dishes, setDishes }) {
                 borderRadius: "50%",
               }}
             />
+            <div className="menu-item-actions">
+              <button className="btn btn-warning"><i class="bi bi-pencil-square"></i></button>
+              <button className="btn btn-danger">X</button>
+            </div>
             <div className="p-3">
               <h3 className="text-light">{dish.title}</h3>
               <p className="text-light">{dish.descript}</p>

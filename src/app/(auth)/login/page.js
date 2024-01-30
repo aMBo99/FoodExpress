@@ -7,6 +7,7 @@ import { Metadata } from "next";
 // import { authenticate } from '@/app/lib/actions';
 import { loginUser } from "../../(home)/lib/dataqueries";
 import { useState } from "react";
+import { useRouter } from 'next/navigation';
 
 // export const metadata = {
 //   title: 'Login',
@@ -14,6 +15,8 @@ import { useState } from "react";
 
 export default function Login() {
   // const [errorMessage, dispatch] = useFormState(authenticate, undefined);
+  const router = useRouter();
+
   const [email, setEmail] = useState("");
   const [passwd, setPasswd] = useState("");
 
@@ -27,6 +30,7 @@ export default function Login() {
       } else {
         console.log("User logged in: ", user);
         alert("Successful login!");
+        router.push('/');
       }
     } catch (error) {
       console.error("Error during login: ", error);
