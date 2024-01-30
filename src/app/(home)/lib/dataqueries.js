@@ -18,6 +18,24 @@ export async function loadDishes() {
   }
 }
 
+export async function createDish(name, description, imageURL) {
+  const prisma = new PrismaClient();
+  try {
+    const fetchedDish = await prisma.dish.findUnique({ where: { title: name.toLowerCase() } });
+    if (!fetchedDish) {
+      await prisma.dish.create({ data: { title: name, descript: description, imgUrl: imageURL } });
+      console.log(`Added dish "${name}" successfully.`);
+    } else {
+      console.log("Dish is already present on the menu!")
+    }
+  } catch (error) {
+    console.error("Error creating dish: ", error);
+    throw error;
+  } finally {
+    await prisma.$disconnect();
+  }
+}
+
 export async function fetchUser(email, passwd, login) {
   const prisma = new PrismaClient();
   try {

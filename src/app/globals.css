@@ -14,7 +14,7 @@
 
 #nav1
 {  
-    /* background-color:#F00; whichever you want */
+    /* background-color: hsl(201, 100%, 6%, 0.85); */
     opacity: 0.85;
     /* filter:(opacity=50); */
 }
@@ -32,4 +32,38 @@
   display: flex;
   margin: 20px;
   padding: 20px;
+}
+
+.menu-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.menu-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.menu-item {
+  width: calc(33.3333% - 20px); /* 20px for the margin */
+  margin: 10px;
+  /* background-color: #3498db; */
+  /* color: #fff; */
+  /* text-align: center; */
+  /* line-height: 40px; */
+}
+
+@media (max-width: 960px) {
+  .menu-item {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 640px) {
+  .menu-item {
+    width: calc(100% - 20px);
+  }
 }

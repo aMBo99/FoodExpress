@@ -9,7 +9,7 @@ generator client {
 
 model Dish {
   id       String    @id @default(auto()) @map("_id") @db.ObjectId
-  title    String
+  title    String    @unique
   descript String
   imgUrl   String
 }
