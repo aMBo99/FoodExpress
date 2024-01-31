@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import "./register.css";
+import "../auth.css";
 import { useState } from "react";
 import { useRouter } from 'next/navigation';
 import { registerUser, fetchUser } from "../../(home)/lib/dataqueries";

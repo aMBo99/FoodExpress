@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import "./login.css";
+import "../auth.css";
 import { Metadata } from "next";
 // import { useFormState, useFormStatus } from 'react-dom';
 // import { authenticate } from '@/app/lib/actions';

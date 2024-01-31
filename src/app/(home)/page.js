@@ -14,7 +14,7 @@ export default function Home() {
         // console.log(fetchedDishes);
         setDishes(fetchedDishes);
       } catch (error) {
-        // Handle or log the error as needed
+        console.log("Error: ", error);
       }
     }
 

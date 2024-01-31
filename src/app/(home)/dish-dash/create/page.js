@@ -33,6 +33,8 @@ export default function CreateDish() {
       if (dish) {
         console.log("Dish created successfully");
         router.push('/');
+      } else {
+        throw error;
       }
     } catch (error) {
       console.log("Error creating a new dish: ", error);
