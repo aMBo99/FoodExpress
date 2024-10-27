@@ -3,8 +3,8 @@
 import Link from "next/link";
 import "../auth.css";
 import { Metadata } from "next";
-// import { useFormState, useFormStatus } from 'react-dom';
-// import { authenticate } from '@/app/lib/actions';
+import { useFormState, useFormStatus } from 'react-dom';
+import { authenticate } from '@/app/lib/actions';
 import { loginUser } from "../../(home)/lib/dataqueries";
 import { useState } from "react";
 import { useRouter } from 'next/navigation';
@@ -14,7 +14,7 @@ import { useRouter } from 'next/navigation';
 // };
 
 export default function Login() {
-  // const [errorMessage, dispatch] = useFormState(authenticate, undefined);
+  const [errorMessage, dispatch] = useFormState(authenticate, undefined);
   const router = useRouter();
 
   const [email, setEmail] = useState("");
@@ -22,7 +22,10 @@ export default function Login() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    if (!email || !passwd) return; // maybe not needed since 'required'
+    if (!email || !passwd) {
+      alert("Please fill out all required fields.");
+      return;
+    }
     try {
       const user = await loginUser(email, passwd);
       if (!user) {
@@ -34,6 +37,7 @@ export default function Login() {
       }
     } catch (error) {
       console.error("Error during login: ", error);
+      alert("Error during login. Please try again.");
     }
   }
 
@@ -50,9 +54,9 @@ export default function Login() {
       <div>
         <div className="login-container">
           <h3 className="login-title">Welcome!</h3>
-          <form action="/" id="form">
+          <form action={dispatch} id="form">
             {" "}
-            {/* should be dispatch */}
+            {/* should be dispatch - removed onSubmit*/}
             <div className="input-group">
               <label htmlFor="email">Email</label>
               <input
@@ -65,6 +69,8 @@ export default function Login() {
                 placeholder="Enter email..."
               />
             </div>
+            {errorMessage?.errors?.email && <p>{errorMessage.errors.email}</p>}
+
             <div className="input-group">
               <label htmlFor="password">Password</label>
               <input
@@ -77,25 +83,38 @@ export default function Login() {
                 placeholder="Enter password..."
               />
             </div>
+            {errorMessage?.errors?.password && (
+              <div>
+                <p>Password must:</p>
+                <ul>
+                  {errorMessage.errors.password.map((error) => (
+                    <li key={error}>- {error}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
             <button
               type="submit"
-              onClick={handleSubmit}
               className="login-button"
             >
               Sign In
             </button>
-            {/* <div
+
+            <LoginButton />
+
+            <div
               className="flex h-8 items-end space-x-1"
               aria-live="polite"
               aria-atomic="true"
             >
               {errorMessage && (
                 <>
-                  {/* <ExclamationCircleIcon className="h-5 w-5 text-red-500" /> */}
-            {/* <p className="text-sm text-red-500">{errorMessage}</p> */}
-            {/* </> */}
-            {/* )} */}
-            {/* </div> */}
+                  <ExclamationCircleIcon className="h-5 w-5 text-red-500" />
+            <p className="text-sm text-red-500">{errorMessage}</p>
+            </>
+            )}
+            </div>
           </form>
           <p
             style={{ color: "white", fontWeight: "lighter", marginTop: "20px" }}
@@ -112,14 +131,14 @@ export default function Login() {
   );
 }
 
-// function LoginButton() {
-//   'use client'
-//   const { pending } = useFormStatus();
+function LoginButton() {
+  // 'use client'
+  const { pending } = useFormStatus();
 
-//   return (
-//     <Button className="mt-4 w-full" aria-disabled={pending}>
-//       Log in
-//       {/* <ArrowRightIcon className="ml-auto h-5 w-5 text-gray-50" /> */}
-//     </Button>
-//   );
-// }
+  return (
+    <Button className="mt-4 w-full" aria-disabled={pending}>
+      Log in
+      <ArrowRightIcon className="ml-auto h-5 w-5 text-gray-50" />
+    </Button>
+  );
+}

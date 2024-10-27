@@ -5,7 +5,7 @@ export function DishComp({ dishes, setDishes }) {
   return (
     <div>
       <div className="menu-row">
-        <h2 style={{ color: "orange" }}>Our Food Menu</h2>
+        <h2 style={{ color: "orange" }}>Our Menu</h2>
         <Link href="/dish-dash/create">
           <button className="btn btn-outline-success">
             <svg
@@ -26,7 +26,7 @@ export function DishComp({ dishes, setDishes }) {
         {dishes.map((dish, key) => (
           <div key={key} className="menu-item border">
             <div className="img-actions">
-              <Image
+              <img
                 src={dish.imgUrl}
                 alt=""
                 className=""

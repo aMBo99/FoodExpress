@@ -18,7 +18,7 @@ export async function loadDishes() {
   }
 }
 
-export async function loadDish(id) {
+export async function loadDish(id: any) {
   const prisma = new PrismaClient();
   try {
     const fetchedDish = await prisma.dish.findUnique({ where: { id: id } });
@@ -31,7 +31,7 @@ export async function loadDish(id) {
   }
 }
 
-export async function updateDish(dishid, name, description, imageURL) {
+export async function updateDish(dishid: any, name: any, description: any, imageURL: any) {
   const prisma = new PrismaClient();
   try {
     const updatedDish = await prisma.dish.update({
@@ -39,7 +39,7 @@ export async function updateDish(dishid, name, description, imageURL) {
       data: { title: name, descript: description, imgUrl: imageURL },
     });
     if (!updatedDish) {
-      throw error;
+      throw Error;
     }
     console.log("Dish updated successfuly!");
     return updatedDish;
@@ -50,7 +50,7 @@ export async function updateDish(dishid, name, description, imageURL) {
   }
 }
 
-export async function createDish(name, description, imageURL) {
+export async function createDish(name: string, description: any, imageURL: any) {
   const prisma = new PrismaClient();
   try {
     const fetchedDish = await prisma.dish.findUnique({
@@ -61,7 +61,7 @@ export async function createDish(name, description, imageURL) {
         data: { title: name, descript: description, imgUrl: imageURL },
       });
       if (!createdDish) {
-        throw error;
+        throw Error;
       }
       console.log(`Added dish "${name}" successfully.`);
     } else {
@@ -74,12 +74,12 @@ export async function createDish(name, description, imageURL) {
   }
 }
 
-export async function deleteDish(dishid) {
+export async function deleteDish(dishid: any) {
   const prisma = new PrismaClient();
   try {
     const deletedDish = await prisma.dish.delete({ where: { id: dishid } })
     if (!deletedDish) {
-      throw error;
+      throw Error;
     }
     console.log("Dish deleted successfully!");
     return deleteDish;
@@ -90,7 +90,7 @@ export async function deleteDish(dishid) {
   }
 }
 
-export async function fetchUser(email, passwd, login) {
+export async function fetchUser(email: string, passwd: any) {
   const prisma = new PrismaClient();
   try {
     const fetchedUser = await prisma.user.findUnique({
@@ -110,7 +110,7 @@ export async function fetchUser(email, passwd, login) {
   }
 }
 
-export async function loginUser(email, passwd) {
+export async function loginUser(email: string, passwd: any) {
   const prisma = new PrismaClient();
   try {
     const fetchedUser = await prisma.user.findUnique({
@@ -131,7 +131,7 @@ export async function loginUser(email, passwd) {
   }
 }
 
-export async function registerUser(email, passwd) {
+export async function registerUser(email: string, passwd: any) {
   const prisma = new PrismaClient();
   try {
     const fetchedUser = await prisma.user.findUnique({
@@ -144,9 +144,12 @@ export async function registerUser(email, passwd) {
         data: { email: email, passwd: hashedPasswd, role: "user" },
       });
       if (!registeredUser) {
-        throw error;
+        throw Error;
       }
       console.log(`Registered user with email "${email}".`);
+    }
+    else {
+      console.log(`User already exists!`);
     }
   } catch (error) {
     console.error("Error creating user: ", error);
