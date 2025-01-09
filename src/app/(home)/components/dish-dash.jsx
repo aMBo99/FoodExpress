@@ -1,11 +1,17 @@
 import Link from "next/link";
 import Image from "next/image";
+import { verifySession, getUser } from '@/app/lib/dal'
 
-export function DishComp({ dishes, setDishes }) {
+export async function DishComp({ dishes, setDishes }) {
+  // const session = await verifySession();
+  const user = await getUser();
+  const userRole = user?.role; // Assuming 'role' is part of the session object
+
   return (
     <div>
       <div className="menu-row">
         <h2 style={{ color: "orange" }}>Our Menu</h2>
+        {userRole === "admin" && (
         <Link href="/dish-dash/create">
           <button className="btn btn-outline-success">
             <svg
@@ -21,6 +27,7 @@ export function DishComp({ dishes, setDishes }) {
             </svg>
           </button>
         </Link>
+      )}
       </div>
       <div className="menu-grid">
         {dishes.map((dish, key) => (
@@ -40,6 +47,7 @@ export function DishComp({ dishes, setDishes }) {
                 }}
               />
               <div className="menu-item-actions">
+                {userRole === "admin" && (
                 <Link href={`/dish-dash/${dish.id}/update`}>
                   <button className="m-1 btn btn-outline-warning">
                     <svg
@@ -58,6 +66,8 @@ export function DishComp({ dishes, setDishes }) {
                     </svg>
                   </button>
                 </Link>
+                )}
+                {userRole === "admin" && (
                 <Link href={`/dish-dash/${dish.id}/delete`}>
                   <button className="m-1 btn btn-outline-danger">
                     <svg
@@ -73,6 +83,7 @@ export function DishComp({ dishes, setDishes }) {
                     </svg>
                   </button>
                 </Link>
+                )}
               </div>
             </div>
             <div className="p-3">

@@ -4,6 +4,7 @@
 
 const bcrypt = require("bcrypt");
 const { PrismaClient } = require("@prisma/client");
+import { verifySession, getUser } from './DAL'
 
 export async function loadDishes() {
   const prisma = new PrismaClient();
@@ -32,6 +33,13 @@ export async function loadDish(id: any) {
 }
 
 export async function updateDish(dishid: any, name: any, description: any, imageURL: any) {
+  const user = await getUser();
+  const userRole = user?.role;
+
+  if (userRole !== 'admin') {
+    return null
+  }
+  
   const prisma = new PrismaClient();
   try {
     const updatedDish = await prisma.dish.update({
@@ -51,6 +59,13 @@ export async function updateDish(dishid: any, name: any, description: any, image
 }
 
 export async function createDish(name: string, description: any, imageURL: any) {
+  const user = await getUser();
+  const userRole = user?.role;
+
+  if (userRole !== 'admin') {
+    return null
+  }
+
   const prisma = new PrismaClient();
   try {
     const fetchedDish = await prisma.dish.findUnique({
@@ -75,6 +90,14 @@ export async function createDish(name: string, description: any, imageURL: any) 
 }
 
 export async function deleteDish(dishid: any) {
+  // const session = await verifySession();
+  const user = await getUser();
+  const userRole = user?.role;
+
+  if (userRole !== 'admin') {
+    return null
+  }
+
   const prisma = new PrismaClient();
   try {
     const deletedDish = await prisma.dish.delete({ where: { id: dishid } })
